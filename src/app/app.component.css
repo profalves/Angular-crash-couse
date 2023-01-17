@@ -1,0 +1,13 @@
+.example-card {
+  margin: 20px;
+  max-width: 400px;
+  color: #fff;
+}
+
+.hide {
+  display: none;
+}
+
+.container {
+  padding: 20px;
+}

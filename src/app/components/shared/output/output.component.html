@@ -1,0 +1,4 @@
+<div *ngFor="let person of userList; let id = index">
+  <p>{{person.name}} - {{person.age}}</p>
+  <button (click)="getData(id)">Enviar</button>
+</div>
