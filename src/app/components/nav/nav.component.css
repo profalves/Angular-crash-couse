@@ -4,6 +4,6 @@
   padding: 12px;
 }
 
-.nav {
-  padding: 8px;
+.nav-item {
+  cursor: pointer;
 }

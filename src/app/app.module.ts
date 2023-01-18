@@ -20,6 +20,7 @@ import { OutputComponent } from './components/shared/output/output.component';
 import { ProductListComponent } from './components/product/product-list/product-list.component';
 import { ProductAddComponent } from './components/product/product-add/product-add.component';
 import { NavComponent } from './components/nav/nav.component';
+import { ProductDetailComponent } from './components/product/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { NavComponent } from './components/nav/nav.component';
     ProductListComponent,
     ProductAddComponent,
     NavComponent,
+    ProductDetailComponent,
   ],
   imports: [
     BrowserModule,

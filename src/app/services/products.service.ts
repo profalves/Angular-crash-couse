@@ -23,4 +23,9 @@ export class ProductsService {
   public productListAlert(product: string) {
     return this.sender.emit(product);
   }
+
+  public get(id: string) {
+    const product = this.listProducts.find(item => item === id);
+    return product
+  }
 }
