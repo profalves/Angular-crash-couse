@@ -1,0 +1,9 @@
+.content {
+  height: 100vh;
+  background-color: #ccc;
+  padding: 12px;
+}
+
+.nav {
+  padding: 8px;
+}
