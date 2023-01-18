@@ -15,6 +15,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { PipesPipe } from './utils/pipes.pipe';
 import { InputComponent } from './components/shared/input/input.component';
 import { OutputComponent } from './components/shared/output/output.component';
+import { ProductListComponent } from './components/product/product-list/product-list.component';
+import { ProductAddComponent } from './components/product/product-add/product-add.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { OutputComponent } from './components/shared/output/output.component';
     PipesPipe,
     InputComponent,
     OutputComponent,
+    ProductListComponent,
+    ProductAddComponent,
   ],
   imports: [
     BrowserModule,
