@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
@@ -9,19 +9,19 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class ProductDetailComponent {
   public product: string | null | undefined;
-  public id?= null;
 
-  constructor(private productService: ProductsService, private route: ActivatedRoute) {
-    this.getProductDetail();
+  constructor(private route: ActivatedRoute, private router: Router, private productsService: ProductsService) {
+    this.getProduct();
   }
 
-  getProductDetail() {
-    console.log('ProductDetailComponent',
-      this.route.snapshot.paramMap.get('product'),
-      typeof this.route.snapshot.paramMap.get('product'));
-    const id: string = this.route.snapshot.paramMap.get('product')!;
+  getProduct() {
+    const id: string = this.route.snapshot.paramMap.get('id')!;
 
-    // this.product = item
-    this.product = this.productService.get(id)!;
+    this.product = this.productsService.getProduct(id);
   }
+
+  backToHome() {
+    this.router.navigate(['']);
+  }
+
 }

@@ -24,8 +24,8 @@ export class ProductsService {
     return this.sender.emit(product);
   }
 
-  public get(id: string) {
+  public getProduct(id: string) {
     const product = this.listProducts.find(item => item === id);
-    return product
+    return product;
   }
 }

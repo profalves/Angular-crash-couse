@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
@@ -21,6 +21,8 @@ import { ProductListComponent } from './components/product/product-list/product-
 import { ProductAddComponent } from './components/product/product-add/product-add.component';
 import { NavComponent } from './components/nav/nav.component';
 import { ProductDetailComponent } from './components/product/product-detail/product-detail.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { ProductDetailComponent } from './components/product/product-detail/prod
     ProductAddComponent,
     NavComponent,
     ProductDetailComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,13 @@ import { ProductDetailComponent } from './components/product/product-detail/prod
     MatCardModule,
     MatSidenavModule,
     MatListModule,
-    FormsModule
+    FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
